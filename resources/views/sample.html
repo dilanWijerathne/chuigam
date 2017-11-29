@@ -1,0 +1,421 @@
+<?php echo $header; ?>
+
+<script>
+    $(document).ready(function()
+        {
+             $("html,body").animate({scrollTop: 300}, 1000);
+        });
+</script>
+
+    <div class="container">
+        <div class="row">
+            <div class=" block " style="height:auto;">
+
+                <div class="block_content_first">
+
+                      <?php foreach ($allcircuit As $circuit) { ?>
+
+                      <div class="">
+                          <div class="col l12 s12 map_img_wrapper">
+                              <div class="map_img">
+                                  <img src="<?php echo $circuit['image']; ?>">
+                              </div>
+                          </div>
+
+
+
+                          <div class="overlay_box">
+
+                              <div class="col l1 s12 center">
+                                  <div class="country">
+                                      <img src="http://flagpedia.net/data/flags/ultra/lk.png">
+                                  </div>
+                              </div>
+                              <div class="col l4 s12">
+                                  <div class="heading_sub_overlay track_name_overlay"><?php echo $circuit['proper_name'];?></div>
+                                  <div class="heading_overlay location_overlay"><i class="material-icons">room</i>&nbsp;<?php echo $circuit['location'];?></div>
+                                  <div class="heading_overlay"><i class="material-icons">perm_identity</i>&nbsp;Owned by <?php echo $circuit['owner'];?></div>
+                              </div>
+
+                              <div class="col l7 s12" style="padding:0">
+
+                                  <div calss="row">
+
+                                      <div class="col l4 s12">
+
+                                          <div class="col-inner-50 heading_overlay">Circuit Type</div>
+                                          <div class="col-inner-50 heading_sub_overlay"><?php echo $circuit['vehical'];?></div>
+
+                                      </div>
+
+                                      <div class="col l4 s12">
+
+                                          <div class="col-inner-50 heading_overlay">Record - Bike</div>
+                                          <div class="col-inner-50 heading_sub_overlay">TBA</div>
+
+                                      </div>
+
+
+                                      <div class="col l4 s12">
+
+                                          <div class="col-inner-80 heading_overlay">Circuit Length - Bike</div>
+                                          <div class="col-inner-20 heading_sub_overlay"><?php echo $circuit['length'];?></div>
+
+                                      </div>
+
+                                      <div class="col l4 s12">
+
+                                          <div class="col-inner-50 heading_overlay">Difficulty</div>
+                                          <div class="col-inner-50 heading_sub_overlay">
+
+                                              <?php if($circuit['difficulty'] == 1) { ?>
+                                              <td>
+                                                  <span class="red-color">&#9733;</span>
+                                                  <span class="r">&#9733;</span>
+                                                  <span class="">&#9733;</span>
+                                                  <span class="">&#9733;</span>
+                                                  <span class="">&#9733;</span>
+                                              </td>
+                                             <?php }
+                                              ?>
+
+                                               <?php if($circuit['difficulty'] == 2) { ?>
+                                              <td>
+                                                  <span class="red-color">&#9733;</span>
+                                                  <span class="red-color">&#9733;</span>
+                                                  <span class="">&#9733;</span>
+                                                  <span class="">&#9733;</span>
+                                                  <span class="">&#9733;</span>
+                                              </td>
+                                             <?php }
+                                              ?>
+                                               <?php if($circuit['difficulty'] == 3) { ?>
+                                              <td>
+                                                  <span class="red-color">&#9733;</span>
+                                                  <span class="red-color">&#9733;</span>
+                                                  <span class="red-color">&#9733;</span>
+                                                  <span class="">&#9733;</span>
+                                                  <span class="">&#9733;</span>
+                                              </td>
+                                             <?php }
+                                              ?>
+                                               <?php if($circuit['difficulty'] == 4) { ?>
+                                              <td>
+                                                  <span class="red-color">&#9733;</span>
+                                                  <span class="red-color">&#9733;</span>
+                                                  <span class="red-color">&#9733;</span>
+                                                  <span class="red-color">&#9733;</span>
+                                                  <span class="">&#9733;</span>
+                                              </td>
+                                             <?php }
+                                              ?>
+                                               <?php if($circuit['difficulty'] == 5) { ?>
+                                              <td>
+                                                  <span class="red-color">&#9733;</span>
+                                                  <span class="red-color">&#9733;</span>
+                                                  <span class="red-color">&#9733;</span>
+                                                  <span class="red-color">&#9733;</span>
+                                                  <span class="red-color">&#9733;</span>
+                                              </td>
+                                             <?php }
+                                              ?>
+
+                                          </div>
+
+                                      </div>
+
+
+                                      <div class="col l4 s12">
+
+                                          <div class="col-inner-50 heading_overlay">Record - Car</div>
+                                          <div class="col-inner-50 heading_sub_overlay">TBA</div>
+
+                                      </div>
+
+                                      <div class="col l4 s12">
+
+                                          <div class="col-inner-80 heading_overlay">Circuit Length - Car</div>
+                                          <div class="col-inner-20 heading_sub_overlay"><?php echo $circuit['length'];?></div>
+
+                                      </div>
+
+
+
+                                  </div>
+
+                              </div>
+
+
+
+
+
+                          </div>
+
+
+
+                          <div class="row circuit_description_mobile" >
+                              <div class="col l1 s12 center">
+                                  <div class="country">
+                                      <img src="http://flagpedia.net/data/flags/ultra/lk.png">
+                                  </div>
+                              </div>
+                              <div class="col l10 s12">
+
+                                  <div class="heading"><?php echo $circuit['proper_name'];?></div>
+                                  <div class="heading_sub"><?php echo $circuit['location'];?></div>
+                              </div>
+
+
+                          <div class="col l6 s12" style="padding:30px;">
+                              <table class="highlight">
+                                  <tr>
+                                      <th>Circuit Type</th>
+                                      <td><?php echo $circuit['vehical'];?></td>
+                                  </tr>
+                                  <tr>
+                                      <th>Owner</th>
+                                      <td><?php echo $circuit['owner'];?></td>
+                                  </tr>
+                                  <tr>
+                                      <th>Difficulty</th>
+
+                                      <?php if($circuit['difficulty'] == 1) { ?>
+                                      <td>
+                                          <span class="red-color">&#9733;</span>
+                                          <span class="r">&#9733;</span>
+                                          <span class="">&#9733;</span>
+                                          <span class="">&#9733;</span>
+                                          <span class="">&#9733;</span>
+                                      </td>
+                                     <?php }
+                                      ?>
+
+                                       <?php if($circuit['difficulty'] == 2) { ?>
+                                      <td>
+                                          <span class="red-color">&#9733;</span>
+                                          <span class="red-color">&#9733;</span>
+                                          <span class="">&#9733;</span>
+                                          <span class="">&#9733;</span>
+                                          <span class="">&#9733;</span>
+                                      </td>
+                                     <?php }
+                                      ?>
+                                       <?php if($circuit['difficulty'] == 3) { ?>
+                                      <td>
+                                          <span class="red-color">&#9733;</span>
+                                          <span class="red-color">&#9733;</span>
+                                          <span class="red-color">&#9733;</span>
+                                          <span class="">&#9733;</span>
+                                          <span class="">&#9733;</span>
+                                      </td>
+                                     <?php }
+                                      ?>
+                                       <?php if($circuit['difficulty'] == 4) { ?>
+                                      <td>
+                                          <span class="red-color">&#9733;</span>
+                                          <span class="red-color">&#9733;</span>
+                                          <span class="red-color">&#9733;</span>
+                                          <span class="red-color">&#9733;</span>
+                                          <span class="">&#9733;</span>
+                                      </td>
+                                     <?php }
+                                      ?>
+                                       <?php if($circuit['difficulty'] == 5) { ?>
+                                      <td>
+                                          <span class="red-color">&#9733;</span>
+                                          <span class="red-color">&#9733;</span>
+                                          <span class="red-color">&#9733;</span>
+                                          <span class="red-color">&#9733;</span>
+                                          <span class="red-color">&#9733;</span>
+                                      </td>
+                                     <?php }
+                                      ?>
+
+                                  </tr>
+                                  <tr>
+                                      <th>Circuit Length - Bike</th>
+                                      <td><?php echo $circuit['length'];?></td>
+                                  </tr>
+                                  <tr>
+                                      <th>Circuit Length - Car</th>
+                                      <td><?php echo $circuit['length'];?></td>
+                                  </tr>
+                                  <tr>
+                                      <th>Lap Record - Bike</th>
+                                      <td>TBA</td>
+                                  </tr>
+                                  <tr>
+                                      <th>Lap Record - Car</th>
+                                      <td>TBA</td>
+                                  </tr>
+                              </table>
+                          </div>
+                      </div>
+
+                      </div>
+
+
+                </div>
+
+            </div>
+                <!--<div class="divider"></div>-->
+
+            <div class="block">
+
+                <div class="row top-gap-50">
+
+                    <div class="col l12 s12">
+
+
+                        <div class="heading center">BEST TIMINGS</div>
+
+                        <?php } ?>
+                        <div id="b_timing" class="col s12 tab_inner_wrapper">
+                            <div class="col l6 s12 center" >
+                                <div class="heading">Car</div>
+
+                                <table class=" highlight">
+                                     <?php foreach ($rankcartime As $Car) { ?>
+
+                                    <tr>
+                                        <th><?php echo $Car['rider_name'] ?></th>
+                                        <td><?php echo $Car['score'] ?></td>
+                                    </tr>
+                                                                    <?php } ?>
+
+                                </table>
+                            </div>
+
+                            <div class="col l6 center">
+                                <div class="heading">Bike</div>
+
+                                <table class="highlight">
+                                     <?php foreach ($rankbiketime As $bike) { ?>
+                                    <tr>
+                                         <th><?php echo $bike['rider_name'] ?></th>
+                                        <td><?php echo $bike['score'] ?></td>
+                                    </tr>
+                                      <?php } ?>
+                                </table>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+                <!--<div class="divider"></div>-->
+
+            <div class="block">
+
+                <div class="block_content">
+
+                    <div class="row top-gap-50">
+
+                        <div class="col l6 s12 center" >
+                            <div class="heading">RECENTS EVENTS</div>
+
+                            <table class="highlight">
+                                <?php foreach ($pastevents AS $past) { ?>
+                                <tr>
+                                    <td style="width:10%">
+                                        <div class="player_img_circle_small">
+                                            <img src="http://flagpedia.net/data/flags/ultra/lk.png">
+                                        </div>
+                                    </td>
+                                    <th><?php echo $past['event'] ?></th>
+                                    <td><?php echo $past['start'] ?></td>
+                                </tr>
+                              <?php } ?>
+                            </table>
+                        </div>
+
+                        <div class="col l6 s12 center">
+                            <div class="heading">UPCOMING EVENTS</div>
+
+                            <table class="highlight">
+                                  <?php foreach ($future AS $futures) { ?>
+                                <tr>
+                                    <td style="width:10%">
+                                        <div class="player_img_circle_small">
+                                            <img src="http://flagpedia.net/data/flags/ultra/lk.png">
+                                        </div>
+                                    </td>
+                                    <th><?php echo $futures['event'] ?></th>
+                                    <td><?php echo $futures['start'] ?></td>
+                                </tr>
+                                 <?php } ?>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+                <!--<div class="divider"></div>-->
+
+                <!--<div class="row top-gap-50">-->
+                <!--    <div class="col l12 s12 heading center bottom-gap-50" style="padding:0">TRACK IMAGES</div>-->
+
+                <!--    <div class="carousel carousel-slider center" data-indicators="true" stye="500px">-->
+
+
+                <!--         <a class="carousel-item" href="#one!"><img  src="https://www.formula1.com/content/fom-website/en/championship/races/2016/Spain/_jcr_content/par/manual_gallery_0/image1.img.640.medium.jpg/1465894368916.jpg"></a>-->
+                <!--        <a class="carousel-item" href="#two!"><img src="https://www.formula1.com/content/fom-website/en/latest/features/2016/5/f1-spain-winners-and-losers/_jcr_content/featureContent/manual_gallery_8/image1.img.640.medium.jpg/1463394721673.jpg"></a>-->
+                <!--        <a class="carousel-item" href="#three!"><img src="http://www.f1fanatic.co.uk/wp-content/uploads/2010/05/start5_barc_2010.jpg"></a>-->
+                <!--        <a class="carousel-item" href="#four!"><img src="https://www.formula1.com/content/fom-website/en/latest/features/2016/5/sunday-in-barcelona---team-by-team-/_jcr_content/featureContent/manual_gallery_9/image1.img.640.medium.jpg/1463338984947.jpg"></a>                            <a class="carousel-item" href="#five!"><img src="http://video.skysports.com/h1aG1pMzE6TelKZqiZkuEocOsz9EdP_u/O0cEsGv5RdudyPNn4xMDoxOjBzMTt2bJ"></a>-->
+
+                <!--    </div>    -->
+
+                <!--</div>  -->
+
+
+
+                <!--<div class="divider"></div>-->
+
+              <div class="block">
+
+                    <div class="row top-gap-50">
+                        <div class="col l12 s12 heading center bottom-gap-50" style="padding:0">SIMILAR TRACKS</div>
+
+                           <?php foreach ($tracks As $trackss) { ?>
+                        <div class="col l3 s12 center">
+                            <a href="http://dailysports.live/Speedhive/Circuit/<?php echo $trackss['name']?>" target="_blank"><div class="map_img">
+                                <img src="<?php echo $trackss['image']?>">
+                            </div></a>
+                            <div class="col l3" style="padding:0;margin-top:5px;">
+                            <div class="country">
+                                <img src="http://flagpedia.net/data/flags/ultra/lk.png">
+                            </div>
+                            </div>
+                            <div class="col l9" style="margin-top:5px;">
+                            <div class="heading_similar"><?php echo $trackss['proper_name']?></div>
+                            <div class="heading_sub_similar"><?php echo $trackss['location']?></div>
+                            </div>
+                        </div>
+                        <?php } ?>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
